@@ -1,0 +1,45 @@
+*{
+    margin:10px;
+    padding:0;
+    box-sizing:border-box;
+    text-align:center;
+    font-size:14px;
+    background-color:#c1f7f7;
+}
+div{
+    margin:2px auto;
+
+    height:20em;
+    padding:1em;
+}ul{
+   list-style:none;
+}#Sbar{
+    width:20%;
+    margin:10px 1px;
+    height:2em;
+    text-align:start;
+    padding:1em;
+}#heading{
+    font-size:3rem;
+}#Sbtn{
+    width:fit-content;
+    padding:0.3em;
+}#word{
+    font-size:3rem;
+}#sound{
+    height:2em;
+    width:fit-content;
+}.bi{
+    font-size:3em;
+}li{
+    text-align:left;
+}
+p{
+    font-size:1.5rem;
+}.pos{
+    font-style: italic;
+    font-weight:600;
+}#info{
+    visibility:hidden;
+    
+}
