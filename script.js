@@ -25,7 +25,6 @@ pronunciation.addEventListener("click", () => {
 });
 searchbtn.addEventListener("click", () => {
     let info=document.querySelector("#info");
-    info.style.visibility="visible";
     let url = "https://api.dictionaryapi.dev/api/v2/entries/en/" + bar.value.trim();
     fetch(url)
         .then((Response) => {
@@ -33,7 +32,6 @@ searchbtn.addEventListener("click", () => {
         }).then((data) => {
             console.log(data);
             let word = document.querySelector("#word");
-            // Find first available audio
             let sound = "";
             for (let s of data[0].phonetics) {
                 if (s.audio !== "") {
@@ -43,9 +41,9 @@ searchbtn.addEventListener("click", () => {
             }
             currentSound = sound;
             word.innerText = bar.value.trim();
-let list = document.querySelector("#meanings");
-list.innerText="";
-              data[0].meanings.forEach((val) => {
+            let list = document.querySelector("#meanings");
+            list.innerText="";
+            data[0].meanings.forEach((val) => {
                 let pos = val.partOfSpeech;
                 let finalmeaning = val.definitions[0].definition;
                 
@@ -53,15 +51,17 @@ list.innerText="";
                 let speech = document.createElement("p");
                 let def = document.createElement("p");
                 li.appendChild(speech);
-               speech.innerText = pos;
-               def.innerText = finalmeaning;
-               speech.className="pos";
-               list.appendChild(li);
-               list.appendChild(def);
+                speech.innerText = pos;
+                def.innerText = finalmeaning;
+                speech.className="pos";
+                list.appendChild(li);
+                list.appendChild(def);
+                info.style.visibility="visible";
             }) 
 
         })
         .catch(() => {
+            info.style.visibility="hidden";
             console.log("invalid word")
             alert("sorry word not found");
         });
