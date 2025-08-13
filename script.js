@@ -63,7 +63,7 @@ searchbtn.addEventListener("click", () => {
         .catch(() => {
             info.style.visibility="hidden";
             console.log("invalid word")
-            alert("sorry word not found");
+            alert(`sorry no result found for ${bar.value.trim()}`);
         });
 });
 
